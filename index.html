@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Moijs.art</title>
+
+  <link rel="icon" type="image/svg" href="assets/moijs.art%20logo%202.svg">
+  <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+
+<section class="nav">
+
+  <button
+          class="planet-button planet1"
+          id="menuToggle"
+          aria-label="Åbn menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+  >
+    <img src="assets/moijs.art%20logo%202.svg" alt="">
+  </button>
+
+  <nav class="nav-menu" id="navMenu" aria-hidden="true">
+    <a href="index.html" class="nav-item item-1">
+      <span>Home</span>
+    </a>
+
+    <a href="portfolio.html" class="nav-item item-2">
+      <span>Portfolio</span>
+    </a>
+
+    <a href="#about" class="nav-item item-3">
+      <span>About</span>
+    </a>
+
+    <a href="gamedev.html" class="nav-item item-4">
+      <span>Art & Illustations</span>
+    </a>
+
+    <a href="#contact" class="nav-item item-5">
+      <span>Contact</span>
+    </a>
+  </nav>
+</section>
+
+<!-- Explore my universe -->
+
+<section class="universe" id="universe">
+
+  <div class="universe-header">
+    <span>Beyond the portfolio</span>
+    <span>Choose your destination ✦</span>
+  </div>
+
+  <h2>Explore my universe</h2>
+
+  <p class="universe-intro">
+    Every planet reveals a different part of my portfolio.
+    Where would you like to go?
+  </p>
+
+  <div class="universe-carousel">
+
+    <button class="universe-arrow universe-prev"
+            type="button"
+            aria-label="Previous planets"
+            disabled>
+      img
+    </button>
+
+    <div class="universe-viewport">
+      <div class="universe-track" id="universeTrack">
+
+        <!-- PAGE 1 -->
+        <div class="universe-page">
+          <button class="universe-planet active"
+                  type="button"
+                  data-topic="web"
+                  aria-pressed="true">
+            <img src="assets/planet blå.svg" alt="">
+            <span>My Portfolio</span>
+          </button>
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="process"
+                  aria-pressed="false">
+            <img src="assets/planet rød.svg" alt="">
+            <span>My Process</span>
+          </button>
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="art"
+                  aria-pressed="false">
+            <img src="assets/planet lilla.svg" alt="">
+            <span>Art &amp; Illustration</span>
+          </button>
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="games"
+                  aria-pressed="false">
+            <img src="assets/planet grøn.svg" alt="">
+            <span>GameDev</span>
+          </button>
+
+        </div>
+
+        <!-- PAGE 2 -->
+        <div class="universe-page">
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="about"
+                  aria-pressed="false">
+            <img src="assets/planet%20blå%20no%20ring.svg" alt="">
+            <span>About Me</span>
+          </button>
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="skills"
+                  aria-pressed="false">
+            <img src="assets/planet%20grøn.svg" alt="">
+            <span>My Skills</span>
+          </button>
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="experiments"
+                  aria-pressed="false">
+            <img src="assets/planet%20rød.svg" alt="">
+            <span>Experiments</span>
+          </button>
+
+          <button class="universe-planet"
+                  type="button"
+                  data-topic="contact"
+                  aria-pressed="false">
+            <img src="assets/planet%20lilla.svg" alt="">
+            <span>Contact</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <button class="universe-arrow universe-next"
+            type="button"
+            aria-label="Next planets">
+      img
+    </button>
+
+  </div>
+
+  <div class="universe-pagination" aria-label="Carousel navigation">
+    <span class="universe-page-indicator active"></span>
+    <span class="universe-page-indicator"></span>
+  </div>
+
+  <!-- CONTENT PANEL -->
+  <div class="universe-panel" aria-live="polite" id="my_portfolio">
+
+        <span class="universe-label" id="universeLabel">
+            DESTINATION 01 / PORTFOLIO
+        </span>
+
+    <h3 id="universeTitle">The Portfolio</h3>
+
+    <p id="universeDescription">
+      I enjoy combining visual design with code to create
+      digital experiences that are both engaging and functional.
+      I'm always learning new ways to bring ideas to the web.
+    </p>
+
+    <a href="portfolio.html"
+       class="universe-link"
+       id="universeLink">
+      Discover my portfolio
+    </a>
+
+  </div>
+</section>
+
+<div class="screen">
+
+  <div class="background-star star-1"></div>
+  <div class="background-star star-2"></div>
+  <div class="background-star star-3"></div>
+  <div class="background-star star-4"></div>
+  <div class="background-star star-5"></div>
+  <div class="background-star star-6"></div>
+  <div class="background-star star-7"></div>
+  <div class="background-star star-8"></div>
+
+  <section class="hero">
+    <div class="circle-wrapper">
+
+      <h1 class="hero-title">
+        Moijs.art
+        <span>"Learn, Grow, Learn"</span>
+      </h1>
+
+      <a class="planet-button planet2" type="button">
+        <img src="assets/planet%20blå%20no%20ring.svg" alt="">
+        <!--                <span>Portfolio</span>-->
+      </a>
+
+      <a href="#" class="planet-button planet3" type="button">
+        <img src="assets/planet%20grøn.svg" alt="">
+        <!--                <span>Play</span>-->
+      </a>
+
+      <a class="planet-button planet4" type="button">
+        <img src="assets/planet%20lilla.svg" alt="">
+        <!--                <span>Illustations and GameDev</span>-->
+      </a>
+
+      <a class="planet-button planet5" type="button">
+        <img src="assets/planet%20blå.svg" alt="">
+        <!--                <span>About</span>-->
+      </a>
+
+      <a class="planet-button planet6" type="button">
+        <img src="assets/planet%20rød.svg" alt="">
+        <!--                <span>Contact</span>-->
+      </a>
+
+    </div>
+  </section>
+</div>
+
+<main>
+
+</main>
+
+
+
+<!-- About Me -->
+
+<section class="about-me" id="about">
+
+  <div class="about-header">
+    <span>Get to know me</span>
+    <span class="about-subtitle">A little about the person behind the work ✦</span>
+  </div>
+
+  <div class="about-content">
+
+    <div class="about-image" id="aboutImage">
+
+      <img
+              src="assets/møjs%201.jpg"
+              alt="Portræt af mig"
+              class="about-photo"
+      >
+
+      <span class="image-caption">Let's work together!</span>
+
+      <span class="image-click-hint">
+        Click to view
+    </span>
+
+    </div>
+
+    <div class="about-text">
+      <h2>About me<span>☾</span></h2>
+
+      <h3>Hi, I'm Marie from Moijs.art!</h3>
+
+      <p>
+        My name is Marie. I am an artist, web designer and game developer,
+        currently studying Multimedia Design.
+        I am naturally curious and always eager to explore new ideas,
+        develop new skills, and take on creative challenges.
+      </p>
+
+      <p>
+        My skill set is broad, ranging from illustration and storytelling to web
+        and multimedia design.
+        While I primarily work with digital media,
+        I also enjoy traditional tools and techniques.
+      </p>
+
+      <p>
+        I am also fascinated by coding and am continuously working to expand my skills
+        in this area, combining creativity and technology to create engaging
+        and meaningful digital experiences.
+      </p>
+
+      <div class="about-facts">
+        <div class="about-fact">
+          <p>Creative thinking</p>
+        </div>
+
+        <div class="about-fact">
+          <p>Curiosity & learning</p>
+        </div>
+
+        <div class="about-fact">
+          <p>Visual Development</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script src="scriptindex.js"></script>
+</body>
+</html>

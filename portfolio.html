@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moijs.art</title>
+
+    <link rel="icon" type="image/svg" href="assets/moijs.art%20logo%202.svg">
+    <link rel="stylesheet" href="styleportfolio.css">
+</head>
+<body>
+
+<section class="nav">
+    <button
+            class="planet-button planet1"
+            id="menuToggle"
+            aria-label="Åbn menu"
+            aria-expanded="false"
+            aria-controls="navMenu"
+    >
+        <img src="assets/moijs.art%20logo%202.svg" alt="">
+    </button>
+
+    <nav class="nav-menu" id="navMenu" aria-hidden="true">
+        <a href="index.html" class="nav-item item-1">
+            <span>Home</span>
+        </a>
+
+        <a href="portfolio.html" class="nav-item item-2">
+            <span>Portfolio</span>
+        </a>
+
+        <a href="#about" class="nav-item item-3">
+            <span>About</span>
+        </a>
+
+        <a href="gamedev.html" class="nav-item item-4">
+            <span>Art & Illustations</span>
+        </a>
+
+        <a href="#contact" class="nav-item item-5">
+            <span>Contact</span>
+        </a>
+    </nav>
+</section>
+
+<section class="projects-section" id="school-projects">
+
+    <header class="projects-header">
+        <span class="projects-eyebrow">A JOURNEY THROUGH MY WORK ✦</span>
+
+
+        <h2 class="projects-title">
+            Welcome to my
+            <span class="stardust-title">
+        <span class="stardust" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i>
+        </span>
+        <span class="stardust-text">Portfolio</span>
+    </span>
+        </h2>
+
+
+        <p>
+            Every project starts with a question, an idea,
+            or a problem to solve. Here's a look into my
+            process and what I've learned along the way.
+        </p>
+    </header>
+
+    <a href="index.html" class="project-home">
+        <span aria-hidden="true">←</span>
+        Home
+    </a>
+
+
+    <div class="project-switcher"
+         role="group"
+         aria-label="Choose project category">
+
+        <button class="project-switch active"
+                type="button"
+                data-category="school"
+                aria-pressed="true">
+            School Projects
+        </button>
+
+
+        <button class="project-switch"
+                type="button"
+                data-category="collaboration"
+                aria-pressed="false">
+            Collaboration Projects
+        </button>
+
+        <button class="project-switch"
+                type="button"
+                data-category="showreel"
+                aria-pressed="false">
+            Showreel
+        </button>
+
+    </div>
+
+    <div class="projects-list">
+
+        <div class="project-group active"
+             data-project-group="school">
+
+
+
+            <div class="semester-filter" id="semesterDropdown">
+
+                <button
+                        class="semester-toggle"
+                        id="semesterToggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-controls="semesterOptions">
+
+                    <span id="semesterSelected">Choose a semester</span>
+                    <span class="semester-arrow" aria-hidden="true">✦</span>
+                </button>
+
+                <div
+                        class="semester-options"
+                        id="semesterOptions"
+                        role="listbox"
+                        aria-label="Choose a semester"
+                        hidden>
+
+                    <button type="button" role="option"
+                            data-value="all" aria-selected="true">
+                        All semesters
+                    </button>
+
+                    <button type="button" role="option"
+                            data-value="1" aria-selected="false">
+                        <span class="semester-number">-</span>
+                        1st semester
+                    </button>
+
+                    <button type="button" role="option"
+                            data-value="2" aria-selected="false">
+                        <span class="semester-number">-</span>
+                        2nd semester
+                    </button>
+
+                    <button type="button" role="option"
+                            data-value="3" aria-selected="false">
+                        <span class="semester-number">-</span>
+                        3rd semester
+                    </button>
+
+                    <button type="button" role="option"
+                            data-value="4" aria-selected="false">
+                        <span class="semester-number">-</span>
+                        4th semester
+                    </button>
+
+                </div>
+            </div>
+
+
+
+            <div class="projects-list">
+
+                <!-- PROJECT 01 -->
+
+                <div class="semester-project" data-semester="1">
+                    <!-- Projekt 1 -->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img src="assets/projects/project-01.jpg"
+                                 alt="Forside til projekt 1">
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Semester 1. <br> Adventure game</h3>
+                            <p>A game about exploration and puzzels. Made by 3 people for a school project where
+                                we learned about worldbuilding, user expirence, colors and much more.</p>
+
+                            <a href="#" alt="Adventuregame. Semeter 1"> Try the game</a>
+                        </div>
+
+                        <!-- Flere billeder, der hører til projekt 1 -->
+                        <div class="project-gallery" hidden>
+                            <img src="assets/projects/project-01-detail.jpg"
+                                 alt="Detalje fra projekt 1">
+                            <img src="assets/projects/project-01-process.jpg"
+                                 alt="Proces fra projekt 2">
+                        </div>
+
+                    </article>
+                    <article>
+                        <div class="project-content">
+
+                <span class="project-category">
+                    WEB DESIGN · SCHOOL PROJECT
+                </span>
+
+                            <h3>Finding the right direction</h3>
+
+                            <p class="project-intro">
+                                Every great design begins with understanding
+                                the problem.
+                            </p>
+
+                            <h4>The idea</h4>
+
+                            <p>
+                                This project challenged me to turn an initial
+                                idea into a digital experience. I started by
+                                exploring the target audience and researching
+                                how the design could communicate the right message.
+                            </p>
+
+                            <h4>My process</h4>
+
+                            <p>
+                                I experimented with layouts, colours and typography
+                                before settling on a visual direction. Along the
+                                way, I learned how important it is to test ideas
+                                rather than committing to the first solution.
+                            </p>
+
+
+                        </div>
+
+                    </article>
+                </div>
+
+                <!-- PROJECT 02 -->
+
+                <div class="semester-project" data-semester="1">
+                    <!-- Projekt 1 -->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img src="assets/projects/project-01.jpg"
+                                 alt="Forside til projekt 1">
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Semester 1. <br> A visual Novel</h3>
+                            <p>A visual novel horror game, about public transportation.
+                                We learnd about coding in HTML, CSS and sound/music</p>
+                        </div>
+
+                        <!-- Flere billeder, der hører til projekt 1 -->
+                        <div class="project-gallery" hidden>
+                            <img src="assets/projects/project-01-detail.jpg"
+                                 alt="Detalje fra projekt 1">
+                            <img src="assets/projects/project-01-process.jpg"
+                                 alt="Proces fra projekt 2">
+                        </div>
+
+                    </article>
+                    <article>
+                        <div class="project-content">
+
+                <span class="project-category">
+                    UX DESIGN · SCHOOL PROJECT
+                </span>
+
+                            <h3>Designing with purpose</h3>
+
+                            <p class="project-intro">
+                                Making something look good is only part
+                                of the process.
+                            </p>
+
+                            <h4>The idea</h4>
+
+                            <p>
+                                I wanted to explore how design choices influence
+                                the way people interact with a website. My focus
+                                was creating an experience that felt intuitive
+                                without losing its personality.
+                            </p>
+
+                            <h4>My process</h4>
+
+                            <p>
+                                I worked with wireframes, visual references and
+                                iterations to find a balance between aesthetics
+                                and usability. This taught me to consider the
+                                user's perspective throughout the design process.
+                            </p>
+
+
+                        </div>
+
+                    </article>
+                </div>
+
+                <div class="semester-project" data-semester="1">
+
+                    <!-- PROJECT 03 -->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img src="assets/projects/project-01.jpg"
+                                 alt="Forside til projekt 1">
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Semester 1. <br> My exam project</h3>
+                            <p>I made a Landingpage, with a visual novel like game, which explains world building through world building.</p>
+                        </div>
+
+                        <!-- Flere billeder, der hører til projekt -->
+                        <div class="project-gallery" hidden>
+                            <img src="assets/projects/project-01-detail.jpg"
+                                 alt="Detalje fra projekt 1">
+                            <img src="assets/projects/project-01-process.jpg"
+                                 alt="Proces fra projekt 2">
+                        </div>
+
+                    </article>
+                    <article>
+                        <div class="project-content">
+
+                <span class="project-category">
+                    CREATIVE DEVELOPMENT
+                </span>
+
+                            <h3>Bringing ideas to life</h3>
+
+                            <p class="project-intro">
+                                Exploring the connection between creativity
+                                and code.
+                            </p>
+
+                            <h4>The idea</h4>
+
+                            <p>
+                                For this project, I wanted to experiment with
+                                more interactive elements and find ways to make
+                                a digital experience feel more personal.
+                            </p>
+
+                            <h4>My process</h4>
+
+                            <p>
+                                I combined visual experimentation with coding,
+                                learning through trial and error. The biggest
+                                lesson was that technical challenges can open
+                                the door to new creative possibilities.
+                            </p>
+
+                        </div>
+                    </article>
+                </div>
+
+                <div class="semester-project" data-semester="2">
+                    <!-- PROJECT 04 sem2-->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img src="assets/projects/project-01.jpg"
+                                 alt="Forside til projekt 1">
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Semester 2. <br> Interactive posters</h3>
+                            <p>Interactive poster and buisness, made in four weeks. Everything is handmade.</p>
+                        </div>
+
+                        <!-- Flere billeder, der hører til projekt 1 -->
+                        <div class="project-gallery" hidden>
+                            <img src="assets/projects/project-01-detail.jpg"
+                                 alt="Detalje fra projekt 1">
+                            <img src="assets/projects/project-01-process.jpg"
+                                 alt="Proces fra projekt 2">
+                        </div>
+
+                    </article>
+                    <article>
+                        <div class="project-content">
+
+                <span class="project-category">
+                    CREATIVE DEVELOPMENT
+                </span>
+
+                            <h3>Bringing ideas to life</h3>
+
+                            <p class="project-intro">
+                                Exploring the connection between creativity
+                                and code.
+                            </p>
+
+                            <h4>The idea</h4>
+
+                            <p>
+                                For this project, I wanted to experiment with
+                                more interactive elements and find ways to make
+                                a digital experience feel more personal.
+                            </p>
+
+                            <h4>My process</h4>
+
+                            <p>
+                                I combined visual experimentation with coding,
+                                learning through trial and error. The biggest
+                                lesson was that technical challenges can open
+                                the door to new creative possibilities.
+                            </p>
+
+                        </div>
+                    </article>
+                </div>
+
+                <div class="semester-project" data-semester="2">
+                    <!-- PROJECT 05 -->
+                    <article class="project reveal">
+
+                        <div class="project-image">
+                            <img src="assets/projects/project-01.jpg"
+                                 alt="Forside til projekt 1">
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Semester 2. <br> Databased UX-design</h3>
+                            <p>plceholder text for sure.</p>
+                        </div>
+
+                        <!-- Flere billeder, der hører til projekt 1 -->
+                        <div class="project-gallery" hidden>
+                            <img src="assets/projects/project-01-detail.jpg"
+                                 alt="Detalje fra projekt 1">
+                            <img src="assets/projects/project-01-process.jpg"
+                                 alt="Proces fra projekt 2">
+                        </div>
+
+                    </article>
+                    <article>
+                        <div class="project-content">
+
+                <span class="project-category">
+                    CREATIVE DEVELOPMENT
+                </span>
+
+                            <h3>Bringing ideas to life</h3>
+
+                            <p class="project-intro">
+                                Exploring the connection between creativity
+                                and code.
+                            </p>
+
+                            <h4>The idea</h4>
+
+                            <p>
+                                For this project, I wanted to experiment with
+                                more interactive elements and find ways to make
+                                a digital experience feel more personal.
+                            </p>
+
+                            <h4>My process</h4>
+
+                            <p>
+                                I combined visual experimentation with coding,
+                                learning through trial and error. The biggest
+                                lesson was that technical challenges can open
+                                the door to new creative possibilities.
+                            </p>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-group"
+         data-project-group="collaboration"
+         hidden>
+
+        <!-- Projekt 6 col-->
+        <article class="project reveal">
+
+            <div class="project-image">
+                <img src="assets/projects/project-01.jpg"
+                     alt="Forside til projekt 1">
+            </div>
+
+            <div class="project-content">
+                <h3>Finding the right direction placeholder</h3>
+                <p>Beskrivelse af projektet.</p>
+            </div>
+
+            <!-- Flere billeder, der hører til projekt 1 -->
+            <div class="project-gallery" hidden>
+                <img src="assets/projects/project-01-detail.jpg"
+                     alt="Detalje fra projekt 1">
+                <img src="assets/projects/project-01-process.jpg"
+                     alt="Proces fra projekt 2">
+            </div>
+
+        </article>
+        <article>
+            <div class="project-content">
+
+                <span class="project-category">
+                    CREATIVE DEVELOPMENT
+                </span>
+
+                <h3>Bringing ideas to life</h3>
+
+                <p class="project-intro">
+                    Exploring the connection between creativity
+                    and code.
+                </p>
+
+                <h4>The idea</h4>
+
+                <p>
+                    For this project, I wanted to experiment with
+                    more interactive elements and find ways to make
+                    a digital experience feel more personal.
+                </p>
+
+                <h4>My process</h4>
+
+                <p>
+                    I combined visual experimentation with coding,
+                    learning through trial and error. The biggest
+                    lesson was that technical challenges can open
+                    the door to new creative possibilities.
+                </p>
+
+            </div>
+        </article>
+
+        <!-- Projekt 1 -->
+        <article class="project reveal">
+
+            <div class="project-image">
+                <img src="assets/projects/project-01.jpg"
+                     alt="Forside til projekt 1">
+            </div>
+
+            <div class="project-content">
+                <h3>Finding the right direction placeholder</h3>
+                <p>Beskrivelse af projektet.</p>
+            </div>
+
+            <!-- Flere billeder, der hører til projekt 1 -->
+            <div class="project-gallery" hidden>
+                <img src="assets/projects/project-01-detail.jpg"
+                     alt="Detalje fra projekt 1">
+                <img src="assets/projects/project-01-process.jpg"
+                     alt="Proces fra projekt 2">
+            </div>
+
+        </article>
+        <article>
+            <div class="project-content">
+
+                <span class="project-category">
+                    CREATIVE DEVELOPMENT
+                </span>
+
+                <h3>Bringing ideas to life</h3>
+
+                <p class="project-intro">
+                    Exploring the connection between creativity
+                    and code.
+                </p>
+
+                <h4>The idea</h4>
+
+                <p>
+                    For this project, I wanted to experiment with
+                    more interactive elements and find ways to make
+                    a digital experience feel more personal.
+                </p>
+
+                <h4>My process</h4>
+
+                <p>
+                    I combined visual experimentation with coding,
+                    learning through trial and error. The biggest
+                    lesson was that technical challenges can open
+                    the door to new creative possibilities.
+                </p>
+
+            </div>
+        </article>
+    </div>
+
+    <!--  showreel-->
+
+    <div class="project-group"
+         data-project-group="showreel"
+         hidden>
+
+        <article class="project reveal">
+
+            <div class="project-image showreel-video">
+                <video controls playsinline preload="metadata">
+                    <source src="assets/showreel.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+
+            <div class="project-content">
+
+            <span class="project-category">
+                SHOWREEL · SELECTED WORKS
+            </span>
+
+                <h3>My Creative Journey</h3>
+
+                <p class="project-intro">
+                    A glimpse into my creative universe.
+                </p>
+
+                <h4>About the showreel</h4>
+
+                <p>
+                    A collection of my favourite creative moments,
+                    bringing together visual design, illustration
+                    and interactive experiences.
+                </p>
+
+                <h4>My process</h4>
+
+                <p>
+                    Explore how I combine creativity, storytelling
+                    and technology to bring ideas to life.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+</section>
+
+
+
+
+<!-- PROJECT IMAGE LIGHTBOX -->
+
+<div class="lightbox" id="projectLightbox"
+     aria-hidden="true">
+
+    <button class="lightbox-close"
+            type="button"
+            aria-label="Close image viewer">
+        &times;
+    </button>
+
+    <button class="lightbox-arrow lightbox-prev"
+            type="button"
+            aria-label="Previous image">
+        &#8592;
+    </button>
+
+    <figure class="lightbox-content">
+        <img src="" alt="" id="lightboxImage">
+        <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+
+    <button class="lightbox-arrow lightbox-next"
+            type="button"
+            aria-label="Next image">
+        &#8594;
+    </button>
+
+    <span class="lightbox-counter" id="lightboxCounter"></span>
+
+</div>
+
+
+<script src="scriptportfolio.js"></script>
+</body>
+</html>

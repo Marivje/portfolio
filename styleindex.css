@@ -1,0 +1,1147 @@
+:root{
+    --light_bluegren:#d4f3ee;
+    --light_purple: rgba(140, 137, 183, 0.94);
+    --dark_purple: #180d2e;
+    --deep_dark: rgba(5, 5, 12, 0.88);
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("assets/baggrund.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+}
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+/* Stjernerne i baggrunden */
+.background-star {
+    position: absolute;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: white;
+    border-radius: 50%;
+
+    opacity: 0.65;
+    box-shadow: 0 0 0.4rem white;
+
+    pointer-events: none;
+
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+/* Blinkende effekt, for the starts*/
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+        scale: 0.7;
+        box-shadow: 0 0 0.2rem white;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1.3;
+        box-shadow:
+                0 0 0.5rem white,
+                0 0 0.7rem #77adff,
+                0 0 1rem #6724ff;
+    }
+}
+
+.star-1 {
+    top: 10%;
+    left: 8%;
+    animation-duration: 2.2s;
+}
+
+.star-2 {
+    top: 18%;
+    left: 28%;
+    animation-duration: 3.5s;
+    animation-delay: 0.8s;
+}
+
+.star-3 {
+    top: 15%;
+    left: 65%;
+    animation-duration: 2.8s;
+    animation-delay: 1.4s;
+}
+
+.star-4 {
+    top: 35%;
+    left: 88%;
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+}
+
+.star-5 {
+    top: 68%;
+    left: 8%;
+    animation-duration: 3s;
+    animation-delay: 1.8s;
+}
+
+.star-6 {
+    top: 82%;
+    left: 25%;
+    animation-duration: 2.5s;
+    animation-delay: 0.3s;
+}
+
+.star-7 {
+    top: 75%;
+    left: 68%;
+    animation-duration: 3.8s;
+    animation-delay: 1.1s;
+}
+
+.star-8 {
+    top: 60%;
+    left: 92%;
+    animation-duration: 2.7s;
+    animation-delay: 2s;
+}
+
+.hero {
+    position: relative;
+    z-index: 0;
+
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+
+}
+
+/* Hero-planeterne skal kunne modtage klik */
+.hero .planet-button {
+    position: absolute;
+    z-index: 20;
+    pointer-events: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Planetbilledet må ikke blokere hover eller klik */
+.hero .planet-button img {
+    pointer-events: none;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Vis tekst og glow ved hover */
+.hero .planet-button:hover img,
+.hero .planet-button:focus-visible img {
+    filter:
+            drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.9))
+            drop-shadow(0 0 1rem rgba(167, 139, 250, 0.9));
+}
+
+.hero .planet-button:hover span,
+.hero .planet-button:focus-visible span {
+    display: block;
+}
+
+.hero .planet-button span {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Sørg for, at hero-sektionen ligger over baggrunden */
+.hero {
+    position: relative;
+    z-index: 10;
+}
+
+
+.circle-wrapper {
+    position: relative;
+    width: min(93vw, 68svh, 46rem);
+    aspect-ratio: 1 / 1;
+}
+
+/* Titel i midten */
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    color: var(--light_purple);
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-family: Tahoma;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.hero-title span {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.4em;
+    font-weight: 400;
+    font-family: Gaegu;
+}
+
+/* Planeter som knapper */
+.planet-button {
+    position: absolute;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    text-align: center;
+    color: var(--light_bluegren);
+    -webkit-text-stroke: 1px #180d2e;
+
+    pointer-events: auto;
+
+    filter: drop-shadow(0 0 0.1rem rgb(119, 173, 255));
+
+    transition: scale 0.25s ease;
+}
+
+.planet-button img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    z-index: 1;
+    pointer-events: none;
+}
+.planet-button img {
+    transition:
+            filter 0.3s ease,
+            transform 0.3s ease;
+}
+
+.planet-button:hover img {
+    filter:
+            drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.7))
+            drop-shadow(0 0 0.8rem rgba(167, 139, 250, 0.7));
+}
+
+/* Skjul teksten som standard */
+.planet-button span {
+    display: none;
+    position: relative;
+    z-index: 1;
+
+    font-family: Tahoma;
+    font-size: clamp(0.65rem, 1.5vw, 1.2rem);
+    font-weight: 600;
+    max-width: 100%;
+    color: var(--light_bluegren);
+    pointer-events: none;
+}
+
+/* Vis teksten, når planeten hoveres */
+.planet-button:hover span {
+    display: block;
+}
+
+/* Navigationen bliver fast under scroll */
+.nav {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 5rem;
+    z-index: 1000;
+}
+
+/* Logo */
+.nav .planet1 {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 5rem;
+    height: 5rem;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Halvcirklen under logoet */
+.nav-menu {
+    --radius: 145px;
+
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+
+    width: calc(var(--radius) * 2);
+    height: var(--radius);
+
+    transform: translateX(-50%) scale(0.8);
+    transform-origin: top center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+}
+
+/* Åben menu */
+.nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Menupunkter */
+.nav-item {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 4.5rem;
+    height: 4.5rem;
+
+    color: var(--light_bluegren);
+    font-family: Tahoma, sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-align: center;
+
+    background: #8c89b7;
+    border: 1px solid var(--light_purple);
+    border-radius: 50%;
+
+    box-shadow: 0 0 0.8rem var(--dark_purple);
+
+    transition:
+            background 0.25s ease,
+            box-shadow 0.25s ease,
+            color 0.25s ease,
+            scale 0.25s ease;
+}
+
+.nav-item:hover {
+    color: var(--light_bluegren);
+    background: var(--deep_dark);
+    box-shadow: 0 0 1.2rem var(--light_bluegren);
+}
+
+/* cirklernes(nav) position langs halvcirkel */
+.item-1 {
+    left: 0;
+    top: 10%;
+}
+
+.item-2 {
+    left: 13%;
+    top: 5rem;
+}
+
+.item-3 {
+    left: 50%;
+    top: 6.5rem;
+    transform: translateX(-50%);
+}
+
+.item-4 {
+    right: 13%;
+    top: 5rem;
+}
+
+.item-5 {
+    right: 0;
+    top: 10%;
+}
+
+/* Seks planeter i en cirkel - planet 1 blev min nav/logo*/
+.planet1 {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 5rem;
+    height: 5rem;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: auto;
+}
+
+
+.planet2 {
+    top: 20%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+}
+
+.planet3 {
+    top: 70%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+}
+
+.planet4 {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.planet5 {
+    top: 70%;
+    left: 4%;
+    transform: translate(-50%, -50%);
+}
+
+.planet6 {
+    top: 20%;
+    left: 4%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Aboue me, sektionen */
+.about-me {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    padding: clamp(2rem, 6vw, 5rem) 5vw;
+
+    background: #05050c;
+    color: var(--light_purple);
+
+    margin-top: 5rem;
+}
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    margin-bottom: clamp(3rem, 7vw, 6rem);
+
+    font-family: Gaegu, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.about-subtitle {
+    opacity: 0.5;
+}
+.about-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(2rem, 7vw, 7rem);
+
+    max-width: 1100px;
+    margin: 0 auto;
+}
+/* Billede */
+.about-image {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+}
+.about-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    border-radius: 1rem;
+    border: 1px solid rgba(140, 137, 183, 0.5);
+
+    box-shadow:
+            0 0 1.5rem rgba(103, 36, 255, 0.15),
+            0 0 4rem rgba(103, 36, 255, 0.08);
+}
+.image-caption {
+    position: absolute;
+    right: -1rem;
+    bottom: 1.5rem;
+
+    padding: 0.7rem 1rem;
+
+    color: var(--dark_purple);
+    background: var(--light_bluegren);
+
+    border-radius: 2rem;
+    font-family: Gaegu, sans-serif;
+    font-size: 1.1rem;
+
+    transform: rotate(5deg);
+}
+
+.about-text h2 {
+    margin-bottom: 2rem;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: normal;
+    font-family: Gaegu;
+}
+.about-text h2 span {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: var(--light_bluegren);
+    font-size: 0.5em;
+    vertical-align: top;
+}
+.about-text h3 {
+    margin-bottom: 1rem;
+
+    color: var(--light_bluegren);
+    font-family: Tahoma, sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+}
+/* < betyder derekte underordnede child af */
+.about-text p {
+    margin-top: 1rem;
+    color: #c3bfdc;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    line-height: 1.6;
+
+    font-family: Tahoma;
+}
+/* facts about me, the more u know...*/
+.about-facts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+
+    margin-top: 2rem;
+
+}
+.about-fact {
+    display: flex;
+    padding: 1rem;
+}
+.about-fact p {
+    color: var(--light_purple);
+    font-family: Gaegu, sans-serif;
+    font-size: 1rem;
+}
+/* Klikbart billede */
+.about-image {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.about-photo {
+    transition:
+            opacity 0.25s ease,
+            transform 0.35s ease,
+            filter 0.35s ease;
+}
+/* Effekt når billedet klikkes på og skifter */
+.about-photo.changing {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(4px);
+}
+.image-click-hint {
+    display: block;
+    margin-top: 1rem;
+
+    font-family: Gaegu, sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+
+    color: var(--light_purple);
+    opacity: 0.65;
+
+    transition: opacity 0.3s ease;
+}
+.about-image:hover .image-click-hint {
+    opacity: 1;
+}
+/* Gør det tydeligt, at billedet er klikbart */
+.about-image:hover .about-photo {
+    filter: drop-shadow(0 0 0.8rem rgba(140, 137, 183, 0.35));
+}
+.about-image:focus-visible {
+    outline: 2px solid var(--light_bluegren);
+    outline-offset: 6px;
+    border-radius: 1rem;
+}
+
+/* Univers delen. Its my hero! */
+.universe {
+    position: relative;
+    z-index: 3;
+
+    padding: clamp(4rem, 9vw, 8rem) 5vw;
+    overflow: hidden;
+
+    background:
+            radial-gradient(
+                    ellipse at 50% 35%,
+                    rgba(103, 36, 255, 0.23),
+                    transparent 65%
+            ),
+            #05050c;
+
+    color: var(--light_purple);
+    text-align: center;
+}
+
+.universe-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    font-family: Gaegu, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.universe-header span:last-child {
+    opacity: 0.55;
+}
+
+.universe h2 {
+    margin-top: 3rem;
+
+    font-family: Tahoma, sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: normal;
+}
+
+.universe-intro {
+    max-width: 36rem;
+    margin: 1rem auto 3rem;
+
+    color: #c3bfdc;
+    font-family: Gaegu, sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.5;
+}
+
+/* Planeterne i hero*/
+
+.universe-carousel {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.25rem, 2vw, 1.5rem);
+
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+}
+
+.universe-viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.universe-track {
+    display: flex;
+    width: 100%;
+    transform: translateX(0);
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.universe-page {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    flex: 0 0 100%;
+    gap: clamp(0.4rem, 2vw, 1.5rem);
+    min-width: 0;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+
+/* Planet buttons, se more*/
+
+.universe-planet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.8rem;
+
+    width: 100%;
+    min-width: 0;
+    padding: 0.6rem 0.25rem 0.9rem;
+
+    color: #c3bfdc;
+    font-family: Tahoma, sans-serif;
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.3s ease,
+            color 0.3s ease,
+            border-color 0.3s ease,
+            background-color 0.3s ease;
+}
+
+.universe-planet img {
+    display: block;
+    width: 100%;
+    max-width: 155px;
+    aspect-ratio: 1;
+    object-fit: contain;
+
+    filter: drop-shadow(
+            0 0 0.4rem rgba(119, 173, 255, 0.2)
+    );
+
+    transition:
+            filter 0.3s ease,
+            transform 0.3s ease;
+}
+
+.universe-planet:hover {
+    transform: translateY(-6px);
+    color: var(--light_bluegren);
+}
+
+.universe-planet:hover img,
+.universe-planet.active img {
+    filter:
+            drop-shadow(0 0 0.7rem rgba(212, 243, 238, 0.5))
+            drop-shadow(0 0 1.3rem rgba(103, 36, 255, 0.45));
+}
+
+.universe-planet.active {
+    color: var(--light_bluegren);
+    background: rgba(140, 137, 183, 0.08);
+    border-color: rgba(140, 137, 183, 0.4);
+}
+
+.universe-planet:focus-visible,
+.universe-arrow:focus-visible {
+    outline: 2px solid var(--light_bluegren);
+    outline-offset: 4px;
+}
+
+/* Carousel arrows, tydelighed i at man kan se mere*/
+
+.universe-arrow {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+
+    width: clamp(2.2rem, 4vw, 3rem);
+    height: clamp(2.2rem, 4vw, 3rem);
+
+    color: var(--light_bluegren);
+    font-size: 1.5rem;
+
+    background: rgba(140, 137, 183, 0.1);
+    border: 1px solid rgba(140, 137, 183, 0.35);
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition:
+            background-color 0.25s ease,
+            transform 0.25s ease,
+            opacity 0.25s ease;
+}
+
+.universe-arrow:hover:not(:disabled) {
+    background: rgba(103, 36, 255, 0.3);
+    transform: scale(1.08);
+}
+
+.universe-arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
+/* Pagination dots , viser at der er flere sider*/
+
+.universe-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.55rem;
+    margin: 0 auto 2.5rem;
+}
+
+.universe-page-indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: rgba(195, 191, 220, 0.35);
+    transition:
+            width 0.3s ease,
+            background-color 0.3s ease;
+}
+
+.universe-page-indicator.active {
+    width: 1.5rem;
+    background: var(--light_bluegren);
+}
+.universe-viewport {
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.universe-track {
+    display: flex;
+    width: 100%;
+
+    transform: translateX(0);
+    transition:
+            transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: transform;
+}
+
+.universe-page {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+/* Planets */
+
+.universe-planet {
+    opacity: 1;
+    transform: scale(1);
+
+    transition:
+            transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.45s ease,
+            filter 0.45s ease;
+}
+
+.universe-planet img {
+    transition:
+            transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+            filter 0.4s ease;
+}
+
+/* Hover effect */
+
+.universe-planet:hover img {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+/* Selected planet */
+
+.universe-planet.active img {
+    filter:
+            drop-shadow(0 0 0.7rem rgba(212, 243, 238, 0.45))
+            drop-shadow(0 0 1.2rem rgba(103, 36, 255, 0.4));
+}
+
+/* Indholdet, der skifter */
+
+.universe-panel {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 5vw, 3rem);
+
+    text-align: left;
+
+    background: rgba(24, 13, 46, 0.55);
+    border: 1px solid rgba(140, 137, 183, 0.3);
+    border-radius: 1.5rem;
+
+    box-shadow: 0 0 3rem rgba(103, 36, 255, 0.08);
+}
+
+.universe-label {
+    color: var(--light_bluegren);
+    font-family: Gaegu, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.universe-panel h3 {
+    margin: 1rem 0;
+
+    color: var(--light_purple);
+    font-family: Tahoma;
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    font-weight: normal;
+}
+
+.universe-panel p {
+    max-width: 55ch;
+
+    color: #c3bfdc;
+    font-family: Gaegu;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.7;
+}
+
+.universe-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    margin-top: 1.5rem;
+    padding-bottom: 0.4rem;
+
+    color: var(--light_bluegren);
+    font-family: Tahoma, sans-serif;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(212, 243, 238, 0.5);
+
+    transition: gap 0.25s ease;
+}
+
+.universe-link:hover {
+    gap: 1rem;
+}
+
+.universe-link:focus-visible {
+    outline: 2px solid var(--light_bluegren);
+    outline-offset: 5px;
+}
+
+.galaxy-star {
+    position: fixed;
+    z-index: 9999;
+
+    width: var(--star-size, 5px);
+    height: var(--star-size, 5px);
+
+    border-radius: 50%;
+    background: var(--light_bluegren);
+
+    box-shadow:
+            0 0 6px var(--light_bluegren),
+            0 0 12px var(--light_purple),
+            0 0 20px #6724ff;
+
+    pointer-events: none;
+
+    animation: starBurst var(--star-duration, 800ms)
+    cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+}
+
+.galaxy-star::before,
+.galaxy-star::after {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    background: #ffffff;
+    border-radius: 2px;
+
+    transform: translate(-50%, -50%);
+}
+
+.galaxy-star::before {
+    width: 2px;
+    height: 12px;
+}
+
+.galaxy-star::after {
+    width: 12px;
+    height: 2px;
+}
+
+@keyframes starBurst {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+                translate(
+                        calc(-50% + var(--burst-x)),
+                        calc(-50% + var(--burst-y))
+                )
+                scale(0.1)
+                rotate(180deg);
+    }
+}
+
+
+/* Responsiv tilpasning på mobil*/
+@media (max-width: 600px) {
+    .circle-wrapper {
+        width: 80vw;
+    }
+
+    .nav-menu {
+        --radius: 115px;
+    }
+
+    .nav-item {
+        width: 3.6rem;
+        height: 3.6rem;
+        font-size: 0.68rem;
+    }
+
+    .item-1,
+    .item-5 {
+        top: 0.6rem;
+    }
+
+    .item-2,
+    .item-4 {
+        top: 4rem;
+    }
+
+    .item-3 {
+        top: 5.7rem;
+    }
+
+    .universe-header{
+        display: none;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 10vw, 3.5rem);
+    }
+
+
+    .about-me {
+        padding: 2rem 1.25rem 4rem;
+    }
+
+    .about-header {
+        margin-bottom: 3rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        width: 75%;
+        max-width: 300px;
+    }
+
+    .image-caption {
+        right: -0.5rem;
+    }
+
+    .about-text h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .about-facts {
+        gap: 0.5rem;
+    }
+    .about-fact span {
+
+        justify-content: start;
+    }
+    /*hero*/
+
+    .universe-header {
+        font-size: 0.75rem;
+    }
+    .universe-carousel {
+        gap: 0.4rem;
+    }
+    .universe-page {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        padding: 0.5rem 0;
+    }
+    .universe-planet {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.25rem;
+    }
+    .universe-planet img {
+        max-width: 120px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .universe-track,
+    .universe-planet,
+    .universe-planet img {
+        transition: none !important;
+    }
+    .universe-arrow,
+    .universe-page-indicator {
+        transition: none;
+    }
+    .galaxy-star {
+        animation-duration: 1ms !important;
+    }
+}
+
+
+html::-webkit-scrollbar {
+    width: 16px;
+}
+
+html::-webkit-scrollbar-track {
+    background: #191322;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #c9a0ff;
+    border: 4px solid #191322;
+    border-radius: 20px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #ead8ff;
+}
