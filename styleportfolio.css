@@ -1,9 +1,15 @@
 :root{
+    --body_text: #d2f0fd;
     --fun_green:#95dbc1;
     --light_bluegren:#d4f3ee;
     --light_purple: rgba(166, 163, 216, 0.96);
     --dark_purple: #180d2e;
-    --deep_dark: rgba(5, 5, 12, 0.88);
+
+    --body_text: #d2f0fd;
+    --light_green: rgb(152, 198, 213);
+    --blue_ish: #178da3;
+    --green_ich: #76b2bd;
+    --deep_dark: #05050c;
 }
 * {
     margin: 0;
@@ -19,46 +25,32 @@
     z-index: 1;
 }
 
-/* Navigationen skal stadig ligge øverst */
+/* nav øverst */
 
 .nav {
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
 }
 
-/* Gør projektsektionens baggrund gennemsigtig,
-   så stjernerne kan ses igennem */
+/* gennemsigtighed*/
 
 .projects-section {
     background:
             radial-gradient(
                     ellipse at 15% 25%,
-                    rgba(103, 36, 255, 0.10),
+                    rgba(119, 173, 255, 0.4),
                     transparent 40%
             ),
             transparent;
 }
 
-
 .planet-button {
-    position: absolute;
-    width: 30%;
-    aspect-ratio: 1 / 1;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-
-    padding: 0.5rem;
     border: none;
     background: transparent;
     cursor: pointer;
 
-    text-align: center;
     color: var(--light_bluegren);
-    -webkit-text-stroke: 1px #180d2e;
 
     pointer-events: auto;
 
@@ -76,8 +68,7 @@
 
     z-index: 1;
     pointer-events: none;
-}
-.planet-button img {
+
     transition:
             filter 0.3s ease,
             transform 0.3s ease;
@@ -85,13 +76,8 @@
 
 .planet-button:hover img {
     filter:
-            drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.7))
-            drop-shadow(0 0 0.8rem rgba(167, 139, 250, 0.7));
-}
-
-/* Vis teksten, når planeten hoveres */
-.planet-button:hover span {
-    display: block;
+            drop-shadow(0 0 0.7rem rgb(234, 240, 248))
+            drop-shadow(0 0 0.8rem rgb(119, 173, 255));
 }
 
 /* Navigationen bliver fast under scroll */
@@ -161,17 +147,17 @@
     width: 4.5rem;
     height: 4.5rem;
 
-    color: var(--light_bluegren);
+    color: var(--body_text);
     font-family: Tahoma, sans-serif;
     font-size: 0.8rem;
     text-decoration: none;
     text-align: center;
 
-    background: #8c89b7;
-    border: 1px solid var(--light_purple);
+    background: var(--blue_ish);
+    border: 1px solid var(--deep_dark);
     border-radius: 50%;
 
-    box-shadow: 0 0 0.8rem var(--dark_purple);
+    box-shadow: 0 0 0.8rem var(--blue_ish);
 
     transition:
             background 0.25s ease,
@@ -213,7 +199,25 @@
     top: 10%;
 }
 
+/*planeter i cirkel - planet 1 blev min nav/logo efter forsøg*/
+.planet1 {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
 
+    transform: translateX(-50%);
+
+    width: 5rem;
+    height: 5rem;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: auto;
+}
 
 
 
@@ -222,15 +226,9 @@
     padding: clamp(5rem, 10vw, 9rem) 4vw;
     overflow: clip;
 
-    color: var(--light_purple);
+    color: var(--light_green);
 
-    background:
-            radial-gradient(
-                    ellipse at 15% 25%,
-                    rgba(103, 36, 255, 0.10),
-                    transparent 40%
-            ),
-            #05050c;
+    background: var(--deep_dark);
 }
 
 .projects-header {
@@ -277,12 +275,12 @@
     position: relative;
     z-index: 2;
     display: inline-block;
-    color: #c6b3ec;
+    color: var(--body_text);
 
     text-shadow:
             0 0 10px #7ca8f1,
-            0 0 20px rgba(193, 6, 193, 0.4),
-            0 0 30px #6724ff;
+            0 0 20px rgb(0, 103, 255),
+            0 0 30px #01245a;
 }
 
 /* Partiklerne - the glitter bby*/
@@ -306,8 +304,8 @@
 
     box-shadow:
             0 0 5px #d4f3ee,
-            0 0 10px #7ca8f1,
-            0 0 15px #6724ff;
+            0 0 10px #488af4,
+            0 0 15px #0066ff;
 
     opacity: 0;
 
@@ -319,74 +317,84 @@
     left: 5%;
     top: 30%;
     animation-delay: 0s;
+
 }
 
 .stardust i:nth-child(2) {
     left: 15%;
     top: 75%;
     animation-delay: 1.3s;
+
 }
 
 .stardust i:nth-child(3) {
     left: 25%;
     top: 10%;
     animation-delay: 2.1s;
+
 }
 
 .stardust i:nth-child(4) {
     left: 35%;
     top: 90%;
     animation-delay: 0.7s;
+
 }
 
 .stardust i:nth-child(5) {
     left: 45%;
     top: 20%;
     animation-delay: 2.8s;
+
 }
 
 .stardust i:nth-child(6) {
     left: 55%;
     top: 80%;
     animation-delay: 1.8s;
+
 }
 
 .stardust i:nth-child(7) {
     left: 65%;
     top: 5%;
     animation-delay: 0.4s;
+
 }
 
 .stardust i:nth-child(8) {
     left: 75%;
     top: 65%;
     animation-delay: 2.5s;
+
 }
 
 .stardust i:nth-child(9) {
     left: 90%;
     top: 25%;
     animation-delay: 1s;
+
 }
 
 .stardust i:nth-child(10) {
     left: 98%;
     top: 85%;
     animation-delay: 3.1s;
+
 }
 
 .stardust i:nth-child(11) {
     left: 12%;
     top: 45%;
     animation-delay: 3.4s;
-    background: #c6b3ec;
+
 }
 
 .stardust i:nth-child(12) {
     left: 82%;
     top: 45%;
     animation-delay: 1.6s;
-    background: #a78bfa;
+
 }
 
 /* fade og blød lys, positioner*/
@@ -418,7 +426,7 @@
     max-width: 570px;
     margin: 0 auto;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Gaegu, sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     line-height: 1.7;
@@ -459,11 +467,9 @@
     min-width: 0;
     aspect-ratio: 4 / 3;
 
-    background: #130e22;
-    border: 1px solid rgba(167, 139, 250, 0.25);
+    background: var(--deep_dark);
+    border: 1px solid rgba(139, 191, 250, 0.25);
     border-radius: 1.25rem;
-
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
 }
 
 .project-image img {
@@ -494,7 +500,7 @@
 .project-content h3 {
     margin: 1rem 0;
 
-    color: var(--light_purple);
+    color: var(--light_green);
     font-family: Tahoma, sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 3rem);
     font-weight: 400;
@@ -504,7 +510,7 @@
 .project-intro {
     margin-bottom: 2rem;
 
-    color: var(--light_bluegren);
+    color: var(--light_green);
     font-family: Tahoma, sans-serif;
     font-size: 1.3rem;
     line-height: 1.5;
@@ -513,14 +519,14 @@
 .project-content h4 {
     margin: 1.5rem 0 0.5rem;
 
-    color: var(--light_bluegren);
+    color: var(--light_green);
     font-family: Tahoma, sans-serif;
     font-size: 1rem;
     font-weight: 400;
 }
 
 .project-content p:not(.project-intro) {
-    color: var(--light_purple);
+    color: var(--body_text);
     font-family: Tahoma, sans-serif;
     font-size: 1.15rem;
     line-height: 1.75;
@@ -597,16 +603,15 @@
 
     object-fit: contain;
 
-    border: 1px solid rgba(167, 139, 250, 0.3);
+    border: 1px solid rgba(119, 173, 255, 0.15);
     border-radius: 0.8rem;
 
-    box-shadow: 0 0 3rem rgba(103, 36, 255, 0.2);
 
     animation: lightbox-zoom 0.35s ease;
 }
 
 .lightbox-content figcaption {
-    color: var(--light_bluegren);
+    color: var(--light_green);
     font-family: Gaegu, sans-serif;
     font-size: 1.2rem;
     text-align: center;
@@ -618,10 +623,10 @@
     justify-content: center;
     align-items: center;
 
-    color: var(--light_bluegren);
-    background: rgba(140, 137, 183, 0.12);
+    color: var(--body_text);
+    background: rgba(119, 173, 255, 0.04);
 
-    border: 1px solid rgba(167, 139, 250, 0.35);
+    border: 1px solid rgba(119, 173, 255, 0.2);
     border-radius: 50%;
 
     cursor: pointer;
@@ -653,7 +658,8 @@
 
 .lightbox-close:hover,
 .lightbox-arrow:hover {
-    background: rgba(103, 36, 255, 0.35);
+    background: var(--green_ich);
+    border: 1px solid rgba(140, 137, 183, 0.35);
     transform: scale(1.08);
 }
 
@@ -661,7 +667,7 @@
     position: absolute;
     bottom: 1.2rem;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Gaegu, sans-serif;
     font-size: 1rem;
 }
@@ -690,12 +696,12 @@
 .project-switch {
     padding: 0.85rem 1.4rem;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Tahoma, sans-serif;
     font-size: 0.85rem;
 
-    background: rgba(140, 137, 183, 0.08);
-    border: 1px solid rgba(140, 137, 183, 0.3);
+    background: rgba(119, 173, 255, 0.04);
+    border: 1px solid rgba(140, 137, 183, 0.35);
     border-radius: 999px;
 
     cursor: pointer;
@@ -708,19 +714,19 @@
 }
 
 .project-switch:hover {
-    color: #d4f3ee;
+    color: var(--body_text);
     border-color: rgba(212, 243, 238, 0.65);
     transform: translateY(-2px);
 }
 
 .project-switch.active {
-    color: #05050c;
-    background: #d4f3ee;
-    border-color: #d4f3ee;
+    color: var(--deep_dark);
+    background: var(--body_text);
+    border-color: var(--deep_dark);
 }
 
 .project-switch:focus-visible {
-    outline: 2px solid #d4f3ee;
+    outline: 2px solid var(--deep_dark);
     outline-offset: 4px;
 }
 
@@ -734,13 +740,13 @@
 
     padding: 0.85rem 1.4rem;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Tahoma, sans-serif;
     font-size: 0.85rem;
     text-decoration: none;
 
     border: 1px solid rgba(140, 137, 183, 0.3);
-    border-radius: 999px;
+    border-radius: 50px;
 
     transition:
             color 0.3s ease,
@@ -755,9 +761,9 @@
 }
 
 .project-home:hover {
-    color: #d4f3ee;
-    background: rgba(103, 36, 255, 0.10);
-    border-color: #b090ef;
+    color: var(--body_text);
+    background: rgba(119, 173, 255, 0.04);
+    border-color: rgba(212, 243, 238, 0.65);
 
     transform: translateY(-2px);
 }
@@ -794,7 +800,7 @@
     width: 100%;
     padding: 0.85rem 1.2rem;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     background: transparent;
 
     font-family: inherit;
@@ -814,9 +820,9 @@
 
 .semester-toggle:hover,
 .semester-filter.open .semester-toggle {
-    color: #d4f3ee;
-    background: rgba(103, 36, 255, 0.10);
-    border-color: #b090ef;
+    color: var(--body_text);
+    background: rgba(119, 173, 255, 0.04);
+    border-color: rgba(212, 243, 238, 0.65);
 }
 
 .semester-toggle:focus-visible,
@@ -847,11 +853,9 @@
     box-sizing: border-box;
     padding: 0.4rem;
 
-    background: #191622;
-    border: 1px solid rgba(140, 137, 183, 0.3);
+    background: rgb(10, 28, 50);
+    border-color: rgba(212, 243, 238, 0.65);
     border-radius: 14px;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 
     transform-origin: top center;
 }
@@ -880,7 +884,7 @@
     width: 100%;
     padding: 0.75rem 0.8rem;
 
-    color: var(--light_purple);
+    color: var(--body_text);
     background: transparent;
 
     font-family: inherit;
@@ -899,19 +903,19 @@
 .semester-options button:hover,
 .semester-options button[aria-selected="true"] {
     color: #d4f3ee;
-    background: rgba(103, 36, 255, 0.14);
+    background: rgba(119, 173, 255, 0.32);
 }
 
 /* Små semester-numre */
 .semester-number {
-    color: #9c89c2;
+    color: var(--body_text);
     font-size: 0.7rem;
     letter-spacing: 0.05em;
 }
 
 .semester-options button:hover .semester-number,
 .semester-options button[aria-selected="true"] .semester-number {
-    color: #d4f3ee;
+    color: var(--body_text);
 }
 
 /* Skjulte projekter */
@@ -981,10 +985,8 @@
 .showreel-video {
     overflow: hidden;
     aspect-ratio: 16 / 9;
-    background: #130e22;
-    border: 1px solid rgba(167, 139, 250, 0.35);
+    background: rgba(119, 173, 255, 0.04);
     border-radius: 1.25rem;
-    box-shadow: 0 0 25px rgba(103, 36, 255, 0.15);
 }
 
 .showreel-video video {
@@ -1004,9 +1006,8 @@
     max-height: 70vh;
     object-fit: contain;
 
-    border: 1px solid rgba(167, 139, 250, 0.3);
+    border: 1px solid rgba(140, 137, 183, 0.35);
     border-radius: 0.8rem;
-    box-shadow: 0 0 3rem rgba(103, 36, 255, 0.2);
 }
 
 .showreel-video video {
@@ -1165,12 +1166,12 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-    background: #191322;
+    background: var(--deep_dark);
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #c9a0ff;
-    border: 4px solid #191322;
+    background: var(--body_text);
+    border: 4px solid var(--body_text);
     border-radius: 20px;
 }
 

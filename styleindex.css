@@ -1,8 +1,10 @@
 :root{
+    --body_text: #d2f0fd;
     --light_bluegren:#d4f3ee;
-    --light_purple: rgba(140, 137, 183, 0.94);
-    --dark_purple: #180d2e;
-    --deep_dark: rgba(5, 5, 12, 0.88);
+    --light_green: rgb(152, 198, 213);
+    --blue_ish: #178da3;
+    --green_ich: #76b2bd;
+    --deep_dark: #05050c;
 
 }
 * {
@@ -11,220 +13,142 @@
     box-sizing: border-box;
 }
 
-.screen {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-
-    background-image: url("assets/baggrund.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    z-index: -1;
+/*forhåbentlig virker fonttyperne med dette...*/
+@font-face {
+    font-family: 'Gaegu';
+    src: url('assets/fonts/Gaegu-Bold.ttf') format('truetype'),
+    url('assets/fonts/Gaegu-Light.ttf') format('truetype'),
+    url('assets/fonts/Gaegu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-.stars {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 5;
-
-    pointer-events: none;
+@font-face {
+    font-family: 'Tahoma';
+    src: url('assets/fonts/tahoma.ttf') format('truetype'),
+    url('assets/fonts/tahomabd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+/*.screen {*/
+/*    position: fixed;*/
+/*    inset: 0;*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+
+/*    background-image: url("assets/baggrund.svg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+
+/*    z-index: -1;*/
+/*}*/
+/*.stars {*/
+/*    position: absolute;*/
+
+/*    inset: 0;*/
+
+/*    z-index: 5;*/
+
+/*    pointer-events: none;*/
+/*}*/
 
 /* Stjernerne i baggrunden */
-.background-star {
-    position: absolute;
-    width: 0.2rem;
-    height: 0.2rem;
-    background: white;
-    border-radius: 50%;
+/*.background-star {*/
+/*    position: absolute;*/
+/*    width: 0.2rem;*/
+/*    height: 0.2rem;*/
+/*    background: white;*/
+/*    border-radius: 50%;*/
 
-    opacity: 0.65;
-    box-shadow: 0 0 0.4rem white;
+/*    opacity: 0.65;*/
+/*    box-shadow: 0 0 0.4rem white;*/
 
-    pointer-events: none;
+/*    pointer-events: none;*/
 
-    animation: twinkle 4s ease-in-out infinite alternate;
-}
+/*    animation: twinkle 4s ease-in-out infinite alternate;*/
+/*}*/
 
-/* Blinkende effekt, for the starts*/
-@keyframes twinkle {
-    0% {
-        opacity: 0.2;
-        scale: 0.7;
-        box-shadow: 0 0 0.2rem white;
-    }
+/*!* Blinkende effekt, for the starts*!*/
+/*@keyframes twinkle {*/
+/*    0% {*/
+/*        opacity: 0.2;*/
+/*        scale: 0.7;*/
+/*        box-shadow: 0 0 0.2rem white;*/
+/*    }*/
 
-    100% {
-        opacity: 1;
-        scale: 1.3;
-        box-shadow:
-                0 0 0.5rem white,
-                0 0 0.7rem #77adff,
-                0 0 1rem #6724ff;
-    }
-}
+/*    100% {*/
+/*        opacity: 1;*/
+/*        scale: 1.3;*/
+/*        box-shadow:*/
+/*                0 0 0.5rem white,*/
+/*                0 0 0.7rem #77adff,*/
+/*                0 0 1rem #6724ff;*/
+/*    }*/
+/*}*/
 
-.star-1 {
-    top: 10%;
-    left: 8%;
-    animation-duration: 2.2s;
-}
+/*.star-1 {*/
+/*    top: 10%;*/
+/*    left: 8%;*/
+/*    animation-duration: 2.2s;*/
+/*}*/
 
-.star-2 {
-    top: 18%;
-    left: 28%;
-    animation-duration: 3.5s;
-    animation-delay: 0.8s;
-}
+/*.star-2 {*/
+/*    top: 18%;*/
+/*    left: 28%;*/
+/*    animation-duration: 3.5s;*/
+/*    animation-delay: 0.8s;*/
+/*}*/
 
-.star-3 {
-    top: 15%;
-    left: 65%;
-    animation-duration: 2.8s;
-    animation-delay: 1.4s;
-}
+/*.star-3 {*/
+/*    top: 15%;*/
+/*    left: 65%;*/
+/*    animation-duration: 2.8s;*/
+/*    animation-delay: 1.4s;*/
+/*}*/
 
-.star-4 {
-    top: 35%;
-    left: 88%;
-    animation-duration: 4s;
-    animation-delay: 0.5s;
-}
+/*.star-4 {*/
+/*    top: 35%;*/
+/*    left: 88%;*/
+/*    animation-duration: 4s;*/
+/*    animation-delay: 0.5s;*/
+/*}*/
 
-.star-5 {
-    top: 68%;
-    left: 8%;
-    animation-duration: 3s;
-    animation-delay: 1.8s;
-}
+/*.star-5 {*/
+/*    top: 68%;*/
+/*    left: 8%;*/
+/*    animation-duration: 3s;*/
+/*    animation-delay: 1.8s;*/
+/*}*/
 
-.star-6 {
-    top: 82%;
-    left: 25%;
-    animation-duration: 2.5s;
-    animation-delay: 0.3s;
-}
+/*.star-6 {*/
+/*    top: 82%;*/
+/*    left: 25%;*/
+/*    animation-duration: 2.5s;*/
+/*    animation-delay: 0.3s;*/
+/*}*/
 
-.star-7 {
-    top: 75%;
-    left: 68%;
-    animation-duration: 3.8s;
-    animation-delay: 1.1s;
-}
+/*.star-7 {*/
+/*    top: 75%;*/
+/*    left: 68%;*/
+/*    animation-duration: 3.8s;*/
+/*    animation-delay: 1.1s;*/
+/*}*/
 
-.star-8 {
-    top: 60%;
-    left: 92%;
-    animation-duration: 2.7s;
-    animation-delay: 2s;
-}
+/*.star-8 {*/
+/*    top: 60%;*/
+/*    left: 92%;*/
+/*    animation-duration: 2.7s;*/
+/*    animation-delay: 2s;*/
+/*}*/
 
-.hero {
-    position: relative;
-    z-index: 0;
-
-    min-height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-
-}
-
-/* Hero-planeterne skal kunne modtage klik */
-.hero .planet-button {
-    position: absolute;
-    z-index: 20;
-    pointer-events: auto;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Planetbilledet må ikke blokere hover eller klik */
-.hero .planet-button img {
-    pointer-events: none;
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-/* Vis tekst og glow ved hover */
-.hero .planet-button:hover img,
-.hero .planet-button:focus-visible img {
-    filter:
-            drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.9))
-            drop-shadow(0 0 1rem rgba(167, 139, 250, 0.9));
-}
-
-.hero .planet-button:hover span,
-.hero .planet-button:focus-visible span {
-    display: block;
-}
-
-.hero .planet-button span {
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Sørg for, at hero-sektionen ligger over baggrunden */
-.hero {
-    position: relative;
-    z-index: 10;
-}
-
-
-.circle-wrapper {
-    position: relative;
-    width: min(93vw, 68svh, 46rem);
-    aspect-ratio: 1 / 1;
-}
-
-/* Titel i midten */
-.hero-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-
-    color: var(--light_purple);
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
-    font-family: Tahoma;
-    line-height: 1.1;
-    text-align: center;
-}
-
-.hero-title span {
-    display: block;
-    margin-top: 1.5rem;
-    font-size: 0.4em;
-    font-weight: 400;
-    font-family: Gaegu;
-}
-
-/* Planeter som knapper */
 .planet-button {
-    position: absolute;
-    width: 30%;
-    aspect-ratio: 1 / 1;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-
-    padding: 0.5rem;
     border: none;
     background: transparent;
     cursor: pointer;
 
-    text-align: center;
     color: var(--light_bluegren);
-    -webkit-text-stroke: 1px #180d2e;
 
     pointer-events: auto;
 
@@ -242,8 +166,7 @@
 
     z-index: 1;
     pointer-events: none;
-}
-.planet-button img {
+
     transition:
             filter 0.3s ease,
             transform 0.3s ease;
@@ -251,27 +174,8 @@
 
 .planet-button:hover img {
     filter:
-            drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.7))
-            drop-shadow(0 0 0.8rem rgba(167, 139, 250, 0.7));
-}
-
-/* Skjul teksten som standard */
-.planet-button span {
-    display: none;
-    position: relative;
-    z-index: 1;
-
-    font-family: Tahoma;
-    font-size: clamp(0.65rem, 1.5vw, 1.2rem);
-    font-weight: 600;
-    max-width: 100%;
-    color: var(--light_bluegren);
-    pointer-events: none;
-}
-
-/* Vis teksten, når planeten hoveres */
-.planet-button:hover span {
-    display: block;
+            drop-shadow(0 0 0.7rem rgb(234, 240, 248))
+            drop-shadow(0 0 0.8rem rgb(119, 173, 255));
 }
 
 /* Navigationen bliver fast under scroll */
@@ -341,17 +245,17 @@
     width: 4.5rem;
     height: 4.5rem;
 
-    color: var(--light_bluegren);
+    color: var(--body_text);
     font-family: Tahoma, sans-serif;
     font-size: 0.8rem;
     text-decoration: none;
     text-align: center;
 
-    background: #8c89b7;
-    border: 1px solid var(--light_purple);
+    background: var(--blue_ish);
+    border: 1px solid var(--deep_dark);
     border-radius: 50%;
 
-    box-shadow: 0 0 0.8rem var(--dark_purple);
+    box-shadow: 0 0 0.8rem var(--blue_ish);
 
     transition:
             background 0.25s ease,
@@ -414,37 +318,6 @@
 }
 
 
-.planet2 {
-    top: 20%;
-    left: 95%;
-    transform: translate(-50%, -50%);
-}
-
-.planet3 {
-    top: 70%;
-    left: 95%;
-    transform: translate(-50%, -50%);
-}
-
-.planet4 {
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.planet5 {
-    top: 70%;
-    left: 4%;
-    transform: translate(-50%, -50%);
-}
-
-.planet6 {
-    top: 20%;
-    left: 4%;
-    transform: translate(-50%, -50%);
-}
-
-
 /* Aboue me, sektionen */
 .about-me {
     position: relative;
@@ -454,7 +327,7 @@
     padding: clamp(2rem, 6vw, 5rem) 5vw;
 
     background: #05050c;
-    color: var(--light_purple);
+    color: var(--light_green);
 
     margin-top: 5rem;
 }
@@ -498,27 +371,19 @@
     object-fit: cover;
 
     border-radius: 1rem;
-    border: 1px solid rgba(140, 137, 183, 0.5);
 
-    box-shadow:
-            0 0 1.5rem rgba(103, 36, 255, 0.15),
-            0 0 4rem rgba(103, 36, 255, 0.08);
 }
 .image-caption {
     position: absolute;
-    right: -1rem;
-    bottom: 1.5rem;
-
+    right: -2rem;
+    bottom: -0.5rem;
     padding: 0.7rem 1rem;
-
-    color: var(--dark_purple);
+    color: var(--blue_ish);
     background: var(--light_bluegren);
-
     border-radius: 2rem;
     font-family: Gaegu, sans-serif;
     font-size: 1.1rem;
-
-    transform: rotate(5deg);
+    transform: rotate(8deg);
 }
 
 .about-text h2 {
@@ -545,7 +410,7 @@
 /* < betyder derekte underordnede child af */
 .about-text p {
     margin-top: 1rem;
-    color: #c3bfdc;
+    color: var(--body_text);
     font-size: clamp(1.1rem, 1.5vw, 1.4rem);
     line-height: 1.6;
 
@@ -566,54 +431,12 @@
     padding: 1rem;
 }
 .about-fact p {
-    color: var(--light_purple);
+    color: var(--light_green);
     font-family: Gaegu, sans-serif;
     font-size: 1rem;
 }
-/* Klikbart billede */
-.about-image {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-.about-photo {
-    transition:
-            opacity 0.25s ease,
-            transform 0.35s ease,
-            filter 0.35s ease;
-}
-/* Effekt når billedet klikkes på og skifter */
-.about-photo.changing {
-    opacity: 0;
-    transform: scale(0.96);
-    filter: blur(4px);
-}
-.image-click-hint {
-    display: block;
-    margin-top: 1rem;
 
-    font-family: Gaegu, sans-serif;
-    font-size: 1.1rem;
-    text-align: center;
-
-    color: var(--light_purple);
-    opacity: 0.65;
-
-    transition: opacity 0.3s ease;
-}
-.about-image:hover .image-click-hint {
-    opacity: 1;
-}
-/* Gør det tydeligt, at billedet er klikbart */
-.about-image:hover .about-photo {
-    filter: drop-shadow(0 0 0.8rem rgba(140, 137, 183, 0.35));
-}
-.about-image:focus-visible {
-    outline: 2px solid var(--light_bluegren);
-    outline-offset: 6px;
-    border-radius: 1rem;
-}
-
-/* Univers delen. Its my hero! */
+/* Univers delen. Its my hero! i just fuc*ed it up LOL*/
 .universe {
     position: relative;
     z-index: 3;
@@ -621,15 +444,9 @@
     padding: clamp(4rem, 9vw, 8rem) 5vw;
     overflow: hidden;
 
-    background:
-            radial-gradient(
-                    ellipse at 50% 35%,
-                    rgba(103, 36, 255, 0.23),
-                    transparent 65%
-            ),
-            #05050c;
+    background: var(--deep_dark);
 
-    color: var(--light_purple);
+    color: var(--light_green);
     text-align: center;
 }
 
@@ -658,12 +475,17 @@
 
 .universe-intro {
     max-width: 36rem;
-    margin: 1rem auto 3rem;
+    margin: 0.7rem auto;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Gaegu, sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     line-height: 1.5;
+}
+.universe-intro span{
+    font-family: Gaegu, sans-serif;
+    font-style: italic;
+    font-size: 2.5vw;
 }
 
 /* Planeterne i hero*/
@@ -714,7 +536,7 @@
     min-width: 0;
     padding: 0.6rem 0.25rem 0.9rem;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Tahoma, sans-serif;
     font-size: clamp(0.7rem, 1.2vw, 1rem);
 
@@ -749,20 +571,20 @@
 
 .universe-planet:hover {
     transform: translateY(-6px);
-    color: var(--light_bluegren);
+    color: var(--body_text);
 }
 
 .universe-planet:hover img,
 .universe-planet.active img {
     filter:
-            drop-shadow(0 0 0.7rem rgba(212, 243, 238, 0.5))
-            drop-shadow(0 0 1.3rem rgba(103, 36, 255, 0.45));
+            drop-shadow(0 0 0.7rem rgb(234, 240, 248))
+            drop-shadow(0 0 0.8rem rgb(119, 173, 255));
 }
 
 .universe-planet.active {
-    color: var(--light_bluegren);
-    background: rgba(140, 137, 183, 0.08);
-    border-color: rgba(140, 137, 183, 0.4);
+    color: var(--body_text);
+    background: rgba(119, 173, 255, 0.04);
+    border-color: rgba(119, 173, 255, 0.4);
 }
 
 .universe-planet:focus-visible,
@@ -781,10 +603,10 @@
     width: clamp(2.2rem, 4vw, 3rem);
     height: clamp(2.2rem, 4vw, 3rem);
 
-    color: var(--light_bluegren);
+    color: var(--body_text);
     font-size: 1.5rem;
 
-    background: rgba(140, 137, 183, 0.1);
+    background: rgba(119, 173, 255, 0.04);
     border: 1px solid rgba(140, 137, 183, 0.35);
     border-radius: 50%;
 
@@ -796,7 +618,7 @@
 }
 
 .universe-arrow:hover:not(:disabled) {
-    background: rgba(103, 36, 255, 0.3);
+    background: var(--green_ich);
     transform: scale(1.08);
 }
 
@@ -818,7 +640,8 @@
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 999px;
-    background: rgba(195, 191, 220, 0.35);
+    background: rgba(119, 173, 255, 0.28);
+
     transition:
             width 0.3s ease,
             background-color 0.3s ease;
@@ -877,11 +700,11 @@
 
 .universe-planet.active img {
     filter:
-            drop-shadow(0 0 0.7rem rgba(212, 243, 238, 0.45))
-            drop-shadow(0 0 1.2rem rgba(103, 36, 255, 0.4));
+            drop-shadow(0 0 0.7rem rgb(234, 240, 248))
+            drop-shadow(0 0 0.8rem rgb(119, 173, 255));
 }
 
-/* Indholdet, der skifter */
+/* Indholdet, der skifter (panelet)*/
 
 .universe-panel {
     max-width: 700px;
@@ -890,15 +713,14 @@
 
     text-align: left;
 
-    background: rgba(24, 13, 46, 0.55);
-    border: 1px solid rgba(140, 137, 183, 0.3);
+    background: rgba(119, 173, 255, 0.04);
+    border: 1px solid rgba(119, 173, 255, 0.35);
     border-radius: 1.5rem;
 
-    box-shadow: 0 0 3rem rgba(103, 36, 255, 0.08);
 }
 
 .universe-label {
-    color: var(--light_bluegren);
+    color: var(--body_text);
     font-family: Gaegu, sans-serif;
     font-size: 0.9rem;
     letter-spacing: 0.1em;
@@ -907,7 +729,7 @@
 .universe-panel h3 {
     margin: 1rem 0;
 
-    color: var(--light_purple);
+    color: var(--light_green);
     font-family: Tahoma;
     font-size: clamp(1.5rem, 3vw, 2.3rem);
     font-weight: normal;
@@ -916,7 +738,7 @@
 .universe-panel p {
     max-width: 55ch;
 
-    color: #c3bfdc;
+    color: var(--body_text);
     font-family: Gaegu;
     font-size: clamp(1.1rem, 2vw, 1.35rem);
     line-height: 1.7;
@@ -960,7 +782,7 @@
 
     box-shadow:
             0 0 6px var(--light_bluegren),
-            0 0 12px var(--light_purple),
+            0 0 12px var(--light_green),
             0 0 20px #6724ff;
 
     pointer-events: none;
@@ -1075,7 +897,7 @@
     }
 
     .image-caption {
-        right: -0.5rem;
+        right: -3.5rem;
     }
 
     .about-text h2 {
@@ -1133,15 +955,16 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-    background: #191322;
+    background: var(--deep_dark);
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #c9a0ff;
-    border: 4px solid #191322;
+    background: var(--body_text);
+    border: 4px solid var(--body_text);
     border-radius: 20px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
     background: #ead8ff;
 }
+

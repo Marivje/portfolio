@@ -1,4 +1,8 @@
 
+
+
+
+
 const menuToggle = document.querySelector("#menuToggle");
 const navMenu = document.querySelector("#navMenu");
 
@@ -28,44 +32,6 @@ document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
         closeMenu();
     }
-});
-
-/*pulling the pic*/
-const aboutImage = document.querySelector("#aboutImage");
-const aboutPhoto = aboutImage.querySelector(".about-photo");
-
-/*3 pic to change*/
-const photos = [
-    "assets/møjs%201.jpg",
-    "assets/møjs%201.jpg",
-    "assets/møjs%201.jpg"
-];
-
-let currentPhoto = 0;
-let isChanging = false;
-
-aboutImage.addEventListener("click", () => {
-    if (isChanging) return;
-
-    isChanging = true;
-    aboutPhoto.classList.add("changing");
-
-    setTimeout(() => {
-        currentPhoto = (currentPhoto + 1) % photos.length;
-
-        aboutPhoto.src = photos[currentPhoto];
-
-        aboutPhoto.onload = () => {
-            aboutPhoto.classList.remove("changing");
-            isChanging = false;
-        };
-
-        aboutPhoto.onerror = () => {
-            aboutPhoto.classList.remove("changing");
-            isChanging = false;
-            console.error("Kunne ikke indlæse billedet:", photos[currentPhoto]);
-        };
-    }, 250);
 });
 
 /*EXPLORE MY UNIVERSE - the more you know*/
@@ -348,3 +314,6 @@ galaxyPlanets.forEach((planet) => {
         }
     });
 });
+
+
+
