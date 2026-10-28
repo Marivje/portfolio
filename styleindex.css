@@ -18,14 +18,24 @@
     font-family: 'Gaegu';
     src: url('assets/fonts/Gaegu-Bold.ttf') format('truetype'),
     url('assets/fonts/Gaegu-Light.ttf') format('truetype'),
-    url('assets/fonts/Gaegu-Regular.ttf') format('truetype');
+    url('assets/fonts/Gaegu-Regular.ttf') format('truetype'),
+    url('assets/fonts/Gaegu-Bold.woff') format('woff'),
+    url('assets/fonts/Gaegu-Bold.woff2') format('woff2'),
+    url('assets/fonts/Gaegu-Light.woff') format('woff'),
+    url('assets/fonts/Gaegu-Light.woff2') format('woff2'),
+    url('assets/fonts/Gaegu-Regular.woff') format('woff'),
+    url('assets/fonts/Gaegu-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Tahoma';
     src: url('assets/fonts/tahoma.ttf') format('truetype'),
-    url('assets/fonts/tahomabd.ttf') format('truetype');
+    url('assets/fonts/tahomabd.ttf') format('truetype'),
+    url('assets/fonts/Tahoma-Bold.woff') format('woff'),
+    url('assets/fonts/Tahoma-Bold.woff2') format('woff2'),
+    url('assets/fonts/Tahoma.woff') format('woff');
+    url('assets/fonts/Tahoma.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -485,7 +495,7 @@
 .universe-intro span{
     font-family: Gaegu, sans-serif;
     font-style: italic;
-    font-size: 2.5vw;
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
 }
 
 /* Planeterne i hero*/
@@ -495,21 +505,7 @@
     align-items: center;
     gap: clamp(0.25rem, 2vw, 1.5rem);
 
-    max-width: 1100px;
     margin: 0 auto 1.5rem;
-}
-
-.universe-viewport {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.universe-track {
-    display: flex;
-    width: 100%;
-    transform: translateX(0);
-    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .universe-page {
@@ -639,7 +635,7 @@
 .universe-page-indicator {
     width: 0.5rem;
     height: 0.5rem;
-    border-radius: 999px;
+    border-radius: 50px;
     background: rgba(119, 173, 255, 0.28);
 
     transition:
@@ -653,7 +649,6 @@
 }
 .universe-viewport {
     overflow: hidden;
-    perspective: 1000px;
 }
 
 .universe-track {
@@ -730,7 +725,7 @@
     margin: 1rem 0;
 
     color: var(--light_green);
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     font-size: clamp(1.5rem, 3vw, 2.3rem);
     font-weight: normal;
 }
@@ -739,7 +734,7 @@
     max-width: 55ch;
 
     color: var(--body_text);
-    font-family: Gaegu;
+    font-family: Gaegu, sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.35rem);
     line-height: 1.7;
 }
@@ -772,7 +767,7 @@
 
 .galaxy-star {
     position: fixed;
-    z-index: 9999;
+    z-index: 100;
 
     width: var(--star-size, 5px);
     height: var(--star-size, 5px);
