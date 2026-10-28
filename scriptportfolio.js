@@ -252,10 +252,19 @@ function showImage(index) {
 
 
 // Åbn lightbox med billeder fra det valgte projekt
-function openLightbox(image, categoryGroup) {
-    // Find kun billeder fra den kategori, billedet tilhører
+function openLightbox(image) {
+    // Find det enkelte projekt, som billedet tilhører
+    const project = image.closest(".project");
+
+    if (!project) return;
+
+    // Find kun billeder i dette projekts billedområde
+    const projectImageContainer = project.querySelector(".project-image");
+
+    if (!projectImageContainer) return;
+
     activeLightboxImages = [
-        ...categoryGroup.querySelectorAll(".project-image img")
+        ...projectImageContainer.querySelectorAll("img")
     ];
 
     currentImageIndex = activeLightboxImages.indexOf(image);
@@ -290,11 +299,7 @@ function closeLightbox() {
 // Klik på billederne
 document.querySelectorAll(".project-image img").forEach((image) => {
     image.addEventListener("click", () => {
-        const categoryGroup = image.closest(".project-group");
-
-        if (!categoryGroup) return;
-
-        openLightbox(image, categoryGroup);
+        openLightbox(image);
     });
 });
 

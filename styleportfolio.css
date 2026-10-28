@@ -240,9 +240,10 @@
 .projects-eyebrow,
 .project-category {
     color: var(--light_bluegren);
-    font-family: Gaegu, sans-serif;
-    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
+    opacity: 0.55;
 }
 
 .projects-header h2 {
@@ -427,8 +428,8 @@
     margin: 0 auto;
 
     color: var(--body_text);
-    font-family: Gaegu, sans-serif;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-family: Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     line-height: 1.7;
 }
 
@@ -612,8 +613,8 @@
 
 .lightbox-content figcaption {
     color: var(--light_green);
-    font-family: Gaegu, sans-serif;
-    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     text-align: center;
 }
 
@@ -668,8 +669,8 @@
     bottom: 1.2rem;
 
     color: var(--body_text);
-    font-family: Gaegu, sans-serif;
-    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 @keyframes lightbox-zoom {
