@@ -1,3 +1,4 @@
+
 :root{
     --body_text: #d2f0fd;
     --light_bluegren:#d4f3ee;
@@ -13,32 +14,6 @@
     box-sizing: border-box;
 }
 
-/*forhåbentlig virker fonttyperne med dette...*/
-@font-face {
-    font-family: 'Gaegu';
-    src: url('assets/fonts/Gaegu-Bold.ttf') format('truetype'),
-    url('assets/fonts/Gaegu-Light.ttf') format('truetype'),
-    url('assets/fonts/Gaegu-Regular.ttf') format('truetype'),
-    url('assets/fonts/Gaegu-Bold.woff') format('woff'),
-    url('assets/fonts/Gaegu-Bold.woff2') format('woff2'),
-    url('assets/fonts/Gaegu-Light.woff') format('woff'),
-    url('assets/fonts/Gaegu-Light.woff2') format('woff2'),
-    url('assets/fonts/Gaegu-Regular.woff') format('woff'),
-    url('assets/fonts/Gaegu-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Tahoma';
-    src: url('assets/fonts/tahoma.ttf') format('truetype'),
-    url('assets/fonts/tahomabd.ttf') format('truetype'),
-    url('assets/fonts/Tahoma-Bold.woff') format('woff'),
-    url('assets/fonts/Tahoma-Bold.woff2') format('woff2'),
-    url('assets/fonts/Tahoma.woff') format('woff');
-    url('assets/fonts/Tahoma.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /*.screen {*/
 /*    position: fixed;*/
