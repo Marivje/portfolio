@@ -154,6 +154,93 @@ document.querySelectorAll(".project.reveal").forEach(
     }
 );
 
+/* COLLABORATION PROJECT DROPDOWN- Almost like the other one*/
+
+const collaborationDropdown = document.querySelector(
+    "#collaborationDropdown"
+);
+
+if (collaborationDropdown) {
+    const toggle = document.querySelector("#collaborationToggle");
+    const options = document.querySelector("#collaborationOptions");
+    const selectedText = document.querySelector("#collaborationSelected");
+
+    const optionButtons = options.querySelectorAll("[data-value]");
+
+    const projects = document.querySelectorAll(
+        '[data-project-group="collaboration"] ' +
+        '[data-collaboration-project]'
+    );
+
+    function closeCollaborationDropdown() {
+        collaborationDropdown.classList.remove("open");
+        options.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", () => {
+        const isOpen = !options.hidden;
+
+        options.hidden = isOpen;
+        collaborationDropdown.classList.toggle("open", !isOpen);
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    optionButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const selectedProject = button.dataset.value;
+
+            selectedText.textContent = button.textContent.trim();
+
+            optionButtons.forEach(option => {
+                option.setAttribute(
+                    "aria-selected",
+                    String(option === button)
+                );
+            });
+
+            projects.forEach(project => {
+                project.hidden =
+                    selectedProject !== "all" &&
+                    project.dataset.collaborationProject !== selectedProject;
+            });
+
+            closeCollaborationDropdown();
+
+            // Scroll til det valgte projekt
+            if (selectedProject !== "all") {
+                const project = document.querySelector(
+                    `[data-collaboration-project="${selectedProject}"]`
+                );
+
+                if (project) {
+                    project.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+        });
+    });
+
+    // Luk dropdown ved klik udenfor
+    document.addEventListener("click", event => {
+        if (!collaborationDropdown.contains(event.target)) {
+            closeCollaborationDropdown();
+        }
+    });
+
+    // Luk dropdown med Escape
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && !options.hidden) {
+            closeCollaborationDropdown();
+            toggle.focus();
+        }
+    });
+}
+
+//the switch btns at the top
+
 const projectSwitches = document.querySelectorAll(".project-switch");
 const projectGroups = document.querySelectorAll(".project-group");
 

@@ -1177,5 +1177,15 @@ html::-webkit-scrollbar-thumb {
 }
 
 html::-webkit-scrollbar-thumb:hover {
-    background: #ead8ff;
+    background: var(--deep_dark);
+}
+
+/* COLLABORATION PROJECTS DROPDOWN */
+
+.collaboration-project[hidden] {
+    display: none !important;
+}
+
+.collaboration-filter {
+    margin-bottom: 2rem;
 }

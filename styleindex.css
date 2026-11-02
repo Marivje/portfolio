@@ -6,6 +6,7 @@
     --green_ich: #76b2bd;
     --deep_dark: #05050c;
 
+
 }
 * {
     margin: 0;
@@ -14,13 +15,24 @@
 }
 
 
+body {
+    background-image: url('assets/cutie.svg');
+    background-repeat: no-repeat;   /* Undgå at billedet gentager sig */
+    background-size: cover;         /* Får billedet til at fylde hele skærmen */
+    background-position: center;    /* Centrerer billedet */
+    background-attachment: fixed;   /* Gør at billedet ikke scroller med siden */
+}
+
+
+
+
 /*.screen {*/
 /*    position: fixed;*/
 /*    inset: 0;*/
 /*    width: 100%;*/
 /*    height: 100vh;*/
 
-/*    background-image: url("assets/baggrund.svg");*/
+/*    background-image: url("assets/cutie.svg");*/
 /*    background-size: cover;*/
 /*    background-position: center;*/
 /*    background-repeat: no-repeat;*/
@@ -310,10 +322,10 @@
     width: 100%;
     padding: clamp(2rem, 6vw, 5rem) 5vw;
 
-    background: #05050c;
+    background: var(--deep_dark);
     color: var(--light_green);
 
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 .about-header {
     display: flex;
@@ -738,74 +750,320 @@
     outline-offset: 5px;
 }
 
-.galaxy-star {
-    position: fixed;
-    z-index: 100;
 
-    width: var(--star-size, 5px);
-    height: var(--star-size, 5px);
+/*kontakt me sektionen*/
 
+.contact-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    margin-top: 10rem;
+    padding-top: 5rem;
+
+    color: var(--body_text);
+    background: var(--deep_dark);
+}
+
+/* Layout */
+
+.contact-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-header {
+    margin: 0 auto clamp(3rem, 7vw, 5rem);
+    text-align: center;
+}
+
+.contact-eyebrow,
+.contact-small-title {
+    color: var(--body_text);
+    opacity: 0.55;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    line-height: 1.8;
+}
+
+.contact-header h2 {
+    margin: 1.2rem 0;
+
+    color: var(--light_green);
+    font-family: Tahoma, sans-serif;
+    font-size: clamp(2.3rem, 6vw, 4.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.contact-header span {
+    display: block;
+    color: var(--body_text);
+
+    text-shadow:
+            0 0 10px #7ca8f1,
+            0 0 20px rgb(0, 103, 255),
+            0 0 30px #01245a;
+}
+
+.contact-header p {
+    margin: 0 auto;
+
+    color: var(--body_text);
+    font-family: Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.contact-layout {
+    display: grid;
+    margin: clamp(3px, 5vw, 4rem);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+}
+
+/* Kontaktinformation */
+
+.contact-info {
+    padding-top: 1rem;
+}
+
+.contact-info h3 {
+    margin: 1rem 0;
+
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+}
+
+.contact-info > p {
+    margin-bottom: 2rem;
+
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.contact-email {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem;
+
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    transition: color 0.25s ease;
+}
+
+.contact-email:hover {
+    color: var(--light_green);
+    text-shadow: 0 0 12px rgba(149, 219, 193, 0.7);
+}
+
+.contact-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.contact-socials a {
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.contact-socials a:hover {
+    color: var(--light_green);
+    transform: translateY(-2px);
+}
+
+/* Formular */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    padding: clamp(1.2rem, 4vw, 2.5rem);
+
+    background: rgba(119, 173, 255, 0.04);
+    border: 1px solid rgba(119, 173, 255, 0.4);
+    border-radius: 1.25rem;
+
+    box-shadow: 0 0 35px rgba(23, 141, 163, 0.06);
+}
+
+.contact-form label {
+    margin-top: 0.5rem;
+
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.95rem 1rem;
+
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+
+    background: rgba(119, 173, 255, 0.04);
+    border: 1px solid rgba(119, 173, 255, 0.4);
+    border-radius: 0.7rem;
+
+    outline: none;
+
+    transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(210, 240, 253, 0.45);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--body_text);
+    background: rgba(119, 173, 255, 0.17);
+}
+
+.contact-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    margin-top: 0.8rem;
+    padding: 1rem 1.2rem;
+
+    color: var(--body_text);
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+
+    background-color: rgba(23, 141, 163, 0.43);
+    border: 1px solid transparent;
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition:
+            background 0.25s ease,
+            box-shadow 0.25s ease,
+            transform 0.25s ease;
+}
+
+
+/* Hold tekst og ikon over stjernerne */
+.contact-button-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Laget med stjerner */
+.contact-stars {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-form button:hover .contact-stars {
+    opacity: 1;
+    background-color: var(--deep_dark);
+}
+.text_send{
+    color: var(--body_text);
+    z-index: 10;
+}
+
+
+/* Hver enkelt stjerne */
+.contact-star {
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
-    background: var(--light_bluegren);
 
+    background: #d4f3ee;
     box-shadow:
-            0 0 6px var(--light_bluegren),
-            0 0 12px var(--light_green),
-            0 0 20px #6724ff;
+            0 0 4px #d4f3ee,
+            0 0 8px #78baff,
+            0 0 12px #178da3;
 
     pointer-events: none;
-
-    animation: starBurst var(--star-duration, 800ms)
-    cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+    will-change: transform, opacity;
 }
 
-.galaxy-star::before,
-.galaxy-star::after {
-    content: "";
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    background: #ffffff;
-    border-radius: 2px;
-
-    transform: translate(-50%, -50%);
-}
-
-.galaxy-star::before {
+.contact-star:nth-child(3n) {
     width: 2px;
-    height: 12px;
-}
-
-.galaxy-star::after {
-    width: 12px;
     height: 2px;
+    background: #95dbc1;
 }
 
-@keyframes starBurst {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.2);
-    }
-
-    10% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-                translate(
-                        calc(-50% + var(--burst-x)),
-                        calc(-50% + var(--burst-y))
-                )
-                scale(0.1)
-                rotate(180deg);
-    }
+.contact-star:nth-child(4n) {
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    box-shadow:
+            0 0 5px #ffffff,
+            0 0 10px #78baff;
 }
 
+
+
+.contact-form button:focus-visible,
+.contact-socials a:focus-visible,
+.contact-email:focus-visible {
+    outline: 2px solid var(--body_text);
+    outline-offset: 4px;
+}
+
+/* Footer */
+
+.contact-footer {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+
+    color: var(--light_bluegren);
+    opacity: 0.55;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+
+    border-top: 1px solid rgba(119, 173, 255, 0.15);
+}
 
 /* Responsiv tilpasning på mobil*/
 @media (max-width: 600px) {
@@ -900,6 +1158,23 @@
         max-width: 120px;
     }
 
+    .contact-section {
+        padding-inline: 6vw;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-header h2 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .contact-form {
+        padding: 1.2rem;
+    }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -915,6 +1190,23 @@
     .galaxy-star {
         animation-duration: 1ms !important;
     }
+
+    .contact-stars span {
+        animation: none;
+        opacity: 0.6;
+    }
+
+    .contact-stars {
+        transition: none;
+    }
+    .contact-email,
+    .contact-socials a,
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        transition: none;
+    }
+
 }
 
 
@@ -933,6 +1225,6 @@ html::-webkit-scrollbar-thumb {
 }
 
 html::-webkit-scrollbar-thumb:hover {
-    background: #ead8ff;
+    background: var(--deep_dark);
 }
 

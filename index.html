@@ -9,9 +9,16 @@
 
   <link rel="icon" type="image/svg" href="assets/moijs.art%20logo%202.svg">
   <link rel="stylesheet" href="styleindex.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
+<canvas id="centipede"></canvas>
+<button id="toggleCentipede">
+  <span class="status-dot"></span>
+  <span class="toggle-label">CREATURE: ON</span>
+</button>
 
 <section class="nav">
 
@@ -72,7 +79,7 @@
             type="button"
             aria-label="Previous planets"
             disabled>
-      img
+      &#8592;
     </button>
 
     <div class="universe-viewport">
@@ -84,7 +91,7 @@
                   type="button"
                   data-topic="web"
                   aria-pressed="true">
-            <img src="assets/planet blå.svg" alt="">
+            <img src="assets/planet%20makur.svg" alt="portfolio planet">
             <span>My Portfolio</span>
           </button>
 
@@ -92,7 +99,7 @@
                   type="button"
                   data-topic="process"
                   aria-pressed="false">
-            <img src="assets/planet rød.svg" alt="">
+            <img src="assets/planet%20venus.svg" alt="process planet">
             <span>My Process</span>
           </button>
 
@@ -100,7 +107,7 @@
                   type="button"
                   data-topic="art"
                   aria-pressed="false">
-            <img src="assets/planet lilla.svg" alt="">
+            <img src="assets/planet%20jorden.svg" alt="art planet">
             <span>Art &amp; Illustration</span>
           </button>
 
@@ -108,7 +115,7 @@
                   type="button"
                   data-topic="games"
                   aria-pressed="false">
-            <img src="assets/planet grøn.svg" alt="">
+            <img src="assets/planet%20mars.svg" alt="game planet">
             <span>GameDev</span>
           </button>
 
@@ -121,7 +128,7 @@
                   type="button"
                   data-topic="about"
                   aria-pressed="false">
-            <img src="assets/planet%20blå%20no%20ring.svg" alt="">
+            <img src="assets/planet%20jupitor.svg" alt="about planet">
             <span>About Me</span>
           </button>
 
@@ -129,7 +136,7 @@
                   type="button"
                   data-topic="skills"
                   aria-pressed="false">
-            <img src="assets/planet%20grøn.svg" alt="">
+            <img src="assets/planet%20saturen.svg" alt="skills planet">
             <span>My Skills</span>
           </button>
 
@@ -137,7 +144,7 @@
                   type="button"
                   data-topic="experiments"
                   aria-pressed="false">
-            <img src="assets/planet%20rød.svg" alt="">
+            <img src="assets/planet%20uranus.svg" alt="experiments">
             <span>Experiments</span>
           </button>
 
@@ -145,7 +152,7 @@
                   type="button"
                   data-topic="contact"
                   aria-pressed="false">
-            <img src="assets/planet%20lilla.svg" alt="">
+            <img src="assets/plpanet%20neptune.svg" alt="contact planet">
             <span>Contact</span>
           </button>
 
@@ -157,7 +164,7 @@
     <button class="universe-arrow universe-next"
             type="button"
             aria-label="Next planets">
-      img
+      &#8594;
     </button>
 
   </div>
@@ -190,25 +197,6 @@
 
   </div>
 </section>
-
-<!--<div class="screen">-->
-
-<!--  <div class="background-star star-1"></div>-->
-<!--  <div class="background-star star-2"></div>-->
-<!--  <div class="background-star star-3"></div>-->
-<!--  <div class="background-star star-4"></div>-->
-<!--  <div class="background-star star-5"></div>-->
-<!--  <div class="background-star star-6"></div>-->
-<!--  <div class="background-star star-7"></div>-->
-<!--  <div class="background-star star-8"></div>-->
-<!--  -->
-<!--</div>-->
-
-<main>
-
-</main>
-
-
 
 <!-- About Me -->
 
@@ -277,6 +265,110 @@
 
 </section>
 
+
+<section class="contact-section" id="contact">
+
+
+
+  <div class="contact-container">
+
+    <header class="contact-header">
+            <span class="contact-eyebrow">
+                LET'S WORK TOGETHER ✦
+            </span>
+
+      <h2>
+        Let's create
+        <span>
+            something
+        </span>
+        that breaks the grid.
+      </h2>
+
+      <p>
+        Have a project in mind, want to collaborate,
+        or simply want to say hello?
+        I'd love to hear from you.
+      </p>
+    </header>
+
+    <div class="contact-layout">
+
+      <div class="contact-info">
+                <span class="contact-small-title">
+                    SEND ME A MESSAGE
+                </span>
+
+        <h3>Let's work together!</h3>
+
+        <p>
+          I'm always curious about new ideas,
+          creative collaborations and opportunities
+          to bring something unique to life.
+        </p>
+
+        <a class="contact-email"
+           href="mailto:YOUR-EMAIL@example.com">
+          <span>✉</span>
+          mekkoch79@gmail.com
+        </a>
+
+        <div class="contact-socials">
+          <!-- Replace # with your actual profile URLs -->
+          <a href="https://www.instagram.com/moijs.art/" target="_blank"
+             rel="noopener noreferrer">Instagram ↗</a>
+
+          <a href="#" target="_blank"
+             rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <form class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST">
+
+        <label for="contact-name">Your name</label>
+        <input
+                id="contact-name"
+                type="text"
+                name="name"
+                placeholder="What should I call you?"
+                autocomplete="name"
+                required>
+
+        <label for="contact-email">Your email</label>
+        <input
+                id="contact-email"
+                type="email"
+                name="email"
+                placeholder="you@gmail.com"
+                autocomplete="email"
+                required>
+
+        <label for="contact-message">Your message</label>
+        <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                placeholder="Tell me about your idea..."
+                required></textarea>
+
+        <button type="submit">
+          <span class="contact-stars" aria-hidden="true"></span>
+          <span class="text_send">Send away</span>
+        </button>
+      </form>
+    </div>
+
+    <footer class="contact-footer">
+      A portfolio by ✦ Marie from Moijs.art
+    </footer>
+
+  </div>
+</section>
+
+
 <script src="scriptindex.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

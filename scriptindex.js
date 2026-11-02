@@ -263,57 +263,111 @@ universePlanets.forEach((planet) => {
 updateUniverseCarousel();
 
 
-/* star burst effekt*/
 
-const galaxyPlanets = document.querySelectorAll(".universe-planet");
 
-galaxyPlanets.forEach((planet) => {
-    planet.addEventListener("click", () => {
-        const rect = planet.getBoundingClientRect();
+const contactButton = document.querySelector(".contact-form button");
 
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+if (contactButton) {
+    const starLayer = contactButton.querySelector(".contact-stars");
 
-        const starCount = 22;
+    if (starLayer) {
+        const stars = [];
+        const starCount = 24;
 
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement("span");
+            star.className = "contact-star";
 
-            star.classList.add("galaxy-star");
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
 
-            // Stjernerne eksploderer i alle retninger
-            const angle = (Math.PI * 2 * i) / starCount
-                + (Math.random() - 0.5) * 0.3;
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
 
-            const distance = 70 + Math.random() * 130;
+            starLayer.appendChild(star);
 
-            const burstX = Math.cos(angle) * distance;
-            const burstY = Math.sin(angle) * distance;
-
-            star.style.left = `${centerX}px`;
-            star.style.top = `${centerY}px`;
-
-            star.style.setProperty("--burst-x", `${burstX}px`);
-            star.style.setProperty("--burst-y", `${burstY}px`);
-
-            star.style.setProperty(
-                "--star-size",
-                `${3 + Math.random() * 4}px`
-            );
-
-            star.style.setProperty(
-                "--star-duration",
-                `${500 + Math.random() * 400}ms`
-            );
-
-            document.body.appendChild(star);
-
-            star.addEventListener("animationend", () => {
-                star.remove();
-            }, { once: true });
+            stars.push({
+                element: star,
+                x: x,
+                y: y,
+                offsetX: 0,
+                offsetY: 0,
+                velocityX: 0,
+                velocityY: 0,
+                twinkle: Math.random() * Math.PI * 2
+            });
         }
-    });
-});
 
+        let mouseX = -1000;
+        let mouseY = -1000;
+        let isHovering = false;
+        let animationFrame;
 
+        contactButton.addEventListener("pointerenter", () => {
+            isHovering = true;
+        });
+
+        contactButton.addEventListener("pointerleave", () => {
+            isHovering = false;
+            mouseX = -1000;
+            mouseY = -1000;
+        });
+
+        contactButton.addEventListener("pointermove", event => {
+            const rect = starLayer.getBoundingClientRect();
+
+            mouseX = event.clientX - rect.left;
+            mouseY = event.clientY - rect.top;
+        });
+
+        function animateStars() {
+            const rect = starLayer.getBoundingClientRect();
+
+            stars.forEach(star => {
+                const baseX = star.x / 100 * rect.width;
+                const baseY = star.y / 100 * rect.height;
+
+                const currentX = baseX + star.offsetX;
+                const currentY = baseY + star.offsetY;
+
+                const dx = currentX - mouseX;
+                const dy = currentY - mouseY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (isHovering && distance < 65 && distance > 0) {
+                    const force = (65 - distance) / 65;
+
+                    star.velocityX += (dx / distance) * force * 1.8;
+                    star.velocityY += (dy / distance) * force * 1.8;
+                }
+
+                // Træghed og langsom tilbagevenden
+                star.velocityX *= 0.91;
+                star.velocityY *= 0.91;
+
+                star.offsetX += star.velocityX;
+                star.offsetY += star.velocityY;
+
+                star.offsetX *= 0.985;
+                star.offsetY *= 0.985;
+
+                star.twinkle += 0.045;
+
+                const opacity =
+                    0.45 + (Math.sin(star.twinkle) + 1) * 0.275;
+
+                star.element.style.opacity = isHovering
+                    ? opacity
+                    : 0;
+
+                star.element.style.transform =
+                    `translate(${star.offsetX}px, ${star.offsetY}px)`;
+            });
+
+            animationFrame = requestAnimationFrame(animateStars);
+        }
+
+        animateStars();
+    }
+}
 
